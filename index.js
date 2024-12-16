@@ -14,7 +14,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 const jwt = require('jsonwebtoken')
-mongoose.connect("mongodb+srv://joy-mahmud:hUQZMCywj46HszhF@cluster0.7xouwts.mongodb.net/react-native-ecommerce", {
+const uri=`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.7xouwts.mongodb.net/react-native-ecommerce`
+mongoose.connect(uri, {
     useNewUrlParser: true, //not required for updated version of mongoose of v6.0.0
     useUnifiedTopology: true //not required for updated version of mongoose of v6.0.0
 

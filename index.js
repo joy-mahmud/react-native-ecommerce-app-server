@@ -63,6 +63,9 @@ const generateSecretKey = () => {
 const secretKey = generateSecretKey()
 
 //api endpoints
+app.get('/',async(req,res)=>{
+    res.send('easyshop-bd-server is runninng')
+})
 app.post('/register', async (req, res) => {
     try {
         const { name, email, password } = req.body
